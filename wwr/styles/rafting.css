@@ -26,14 +26,17 @@
 body {
   font-family: var(--body-font);
   color: var(--text-color);
-  background-color: var(--accent2-color);
+  background-color: #c9def1;
+  line-height: 1.6;
 }
 
 /* =========================
-   PAGE LAYOUT
+   PAGE WIDTH
 ========================= */
-header, main, footer {
-  width: 840px;
+header,
+main,
+footer {
+  width: 1000px;
   margin: 0 auto;
 }
 
@@ -41,43 +44,53 @@ header, main, footer {
    HEADER
 ========================= */
 header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 180px 1fr;
   align-items: center;
-  justify-content: space-between;
-  padding: 16px 0;
+  background-color: #d8d0f0;
+  padding: 20px;
+  min-height: 120px;
 }
 
 header img {
-  width: 120px;
+  width: 110px;
   height: auto;
 }
 
-/* NAV */
+/* =========================
+   NAVIGATION
+========================= */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
 nav a {
-  margin-left: 12px;
   text-decoration: none;
-  color: var(--primary-color);
-  font-weight: bold;
+  color: black;
+  background-color: white;
+  border: 1px solid gray;
+  padding: 8px 20px;
+  font-size: 14px;
 }
 
 nav a:hover {
-  color: var(--accent1-color);
+  background-color: #f0f0f0;
 }
 
 /* =========================
    HEADINGS
 ========================= */
-h1, h2 {
+h1,
+h2 {
   font-family: var(--heading-font);
   color: var(--primary-color);
 }
 
-/* =========================
-   GENERAL SPACING
-========================= */
-nav, p, section, article {
-  margin: 16px;
-  padding: 8px;
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* =========================
@@ -85,62 +98,133 @@ nav, p, section, article {
 ========================= */
 .hero {
   position: relative;
+  margin-top: 10px;
 }
 
-/* HERO IMAGE */
-.hero img {
-  display: block;
+.hero > img {
   width: 100%;
-  height: auto;
+  display: block;
 }
 
-/* HERO TITLE OVERLAY */
 .hero h1 {
   position: absolute;
-  top: 20px;
+  top: 15px;
   width: 100%;
   text-align: center;
-  padding: 16px;
-  background-color: var(--accent1-color);
+  background-color: rgba(98, 182, 203, 0.85);
   color: white;
-  opacity: 0.85;
+  padding: 15px;
+  font-size: 2rem;
 }
 
-/* HERO ARTICLE */
 .hero article {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 300px;
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 12px;
-  border-radius: 8px;
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+    right: 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgba(255,255,255,.9);
+    padding: 20px;
 }
 
-/* IMAGE INSIDE ARTICLE */
 .hero article img {
-  float: right;
-  width: 120px;
-  margin-left: 10px;
-  border-radius: 6px;
+    order: 2;
+    width: 120px;
+}
+
+.hero article p {
+    order: 1;
+    margin-right: 20px;
+}
+
+/* =========================
+   HISTORY SECTION
+========================= */
+.history {
+  background-color: white;
+  border: 1px solid gray;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.history-content {
+  display: grid;
+  grid-template-columns: 1fr 180px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.history-content img {
+  width: 100%;
+}
+
+/* =========================
+   ADVENTURES SECTION
+========================= */
+.adventures {
+  background-color: white;
+  border: 1px solid gray;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.adventure-gallery {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.adventure-gallery figure {
+  flex: 1;
+  text-align: center;
+}
+
+.adventure-gallery img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+figcaption {
+  margin-top: 8px;
+  font-size: 0.85rem;
 }
 
 /* =========================
    FOOTER
 ========================= */
 footer {
-  text-align: center;
   margin-top: 20px;
-  padding: 16px 0;
+  background-color: #d8d0f0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 15px 20px;
 }
 
-/* SOCIAL MEDIA LINKS */
+footer p {
+  font-size: 14px;
+}
+
+/* =========================
+   SOCIAL MEDIA
+========================= */
+.socialmedia {
+  display: flex;
+  gap: 10px;
+}
+
 .socialmedia a {
   text-decoration: none;
-  margin: 0 8px;
 }
 
 .socialmedia img {
-  width: 24px;
-  height: 24px;
+  width: 35px;
+  height: 35px;
 }
